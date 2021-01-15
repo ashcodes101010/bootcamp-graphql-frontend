@@ -2,6 +2,7 @@ import React, { useReducer } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 import { SPECIFIC_AUTHOR, ADD_BOOK } from './graphql'
 import { useParams } from 'react-router-dom'
+
 import { Body, Title } from '../../styles'
 import { PersonalInfo, PageArrangement, BookSection, BookForm } from './styles'
 import Books from '../../components/Books'
@@ -70,10 +71,36 @@ const AuthorPage = () => {
           <h1>Books</h1>
           <Books books={books} />
           <BookForm>
-            <p>Title: <input value={form.title} onChange={e => setForm({ 'title': e.target.value })} placeholder="Title" /></p>
-            <p>Language: <input value={form.language} onChange={e => setForm({ 'language': e.target.value })} placeholder="Language"/></p>
-            <p>Publication date: <input type="date" value={form.date} onChange={e => setForm({ 'date': e.target.value })} placeholder="Date Published" /></p>
-            <p>Page count: <input value={form.numPages ? form.numPages : ''} onChange={e => { parseInt(e.target.value) ? setForm({ 'numPages': parseInt(e.target.value)}) : setForm({ 'numPages': 0 })}} placeholder="Page Count" /></p>
+            <p>Title:&ensp; 
+              <input 
+                value={form.title} 
+                onChange={e => setForm({ 'title': e.target.value })} 
+                placeholder="Title"
+              />
+            </p>
+            <p>Language:&ensp; 
+              <input 
+                value={form.language} 
+                onChange={e => setForm({ 'language': e.target.value })} 
+                placeholder="Language"
+              />
+            </p>
+            <p>Publication date:&ensp; 
+              <input 
+                type="date" 
+                value={form.date} 
+                onChange={e => setForm({ 'date': e.target.value })} 
+                placeholder="Date Published"
+              />
+            </p>
+            <p>Page count:&ensp; 
+              <input 
+                value={form.numPages ? form.numPages : ''} 
+                onChange={e => 
+                  {parseInt(e.target.value) ? setForm({ 'numPages': parseInt(e.target.value)}) : setForm({ 'numPages': 0 })}} 
+                placeholder="Page Count"
+              />
+            </p>
             <button type="button" onClick={addBook}>Add Book</button>
           </BookForm>
         </BookSection>

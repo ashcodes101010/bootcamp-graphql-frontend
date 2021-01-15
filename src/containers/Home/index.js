@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import { ALL_AUTHORS, ADD_AUTHOR } from './graphql'
+import { ALL_AUTHORS } from './graphql'
+import { ADD_AUTHOR } from'../AddAuthor/graphql'
 import Authors from './components/Authors/authors'
 import { Body, Title, StyledButton } from '../../styles'
 import { InfoBox } from './styles'
