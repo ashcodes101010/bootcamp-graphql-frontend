@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 import { Body, Title } from '../../styles'
 import { PersonalInfo, PageArrangement, BookSection, BookForm } from './styles'
-import Books from '../../components/Books'
+import Books from '../Books'
 
 const AuthorPage = () => {
   const userId = useParams()
@@ -30,7 +30,7 @@ const AuthorPage = () => {
         language: form.language,
         numPages: form.numPages,
         authorId: userId.id,
-        publisherId: '40465945-0956-41d4-bff3-e503ba72c501', // placeholder
+        publisherId: '9e1bd9c8-4fc8-4e1d-8446-9e2505dec81d', // placeholder
         bestseller: false,
         datePublished: form.date
       }

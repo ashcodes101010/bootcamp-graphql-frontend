@@ -47,4 +47,36 @@ export const BookForm = styled.div`
     padding-left: 40px;
     background-color: #f5f4dc;
     margin-bottom: 40px;
+
+    input {
+        height: 15px;
+        width: 150px;
+        font-size: 15px;
+        border-radius: 7px;
+        padding: 7px;
+    }
+
+    button {
+        background-color: #e6dac1;
+        color: #3b301b;
+        font-size: 12px;
+        width: 80px;
+        height: 30px;
+        border-radius: 5px;
+        border: outset #e6dac1;
+        transition: 
+            width 0.17s, 
+            height 0.17s, 
+            background-color 0.17s, 
+            border 0.17s,
+            color 0.17s;
+
+        &:hover {
+            width: 85px;
+            height: 31.9px;
+            background-color: #f5eedf;
+            border: outset #f5eedf;
+            color: #8f8571;
+        }
+    }
 `

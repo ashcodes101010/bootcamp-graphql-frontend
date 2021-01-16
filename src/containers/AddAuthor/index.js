@@ -1,11 +1,16 @@
 import React, { useReducer } from 'react'
 import { ADD_AUTHOR } from './graphql'
 import { useMutation } from '@apollo/react-hooks'
+import { useHistory } from 'react-router-dom'
 
 import { Body, Title, StyledButton } from '../../styles'
 import { FormGroup } from './styles'
 
 const AddAuthor = () => {
+  const history = useHistory()
+  if (!localStorage.getItem('token')) {
+    history.push('/')
+  }
   const reducer = (prevState, payload) => ({ ...prevState, ...payload })
   const [form, setForm] = useReducer(reducer, {
     firstName: '',
@@ -17,7 +22,6 @@ const AddAuthor = () => {
     state: '',
     zip: '', 
   })
-
   const [addAuthor] = useMutation(ADD_AUTHOR, {
     variables: {
       input: {
@@ -34,7 +38,6 @@ const AddAuthor = () => {
       },
     },
   })
-
   const handleSubmit = async () => {
     try {
       await addAuthor(addAuthor.variables)
@@ -43,7 +46,6 @@ const AddAuthor = () => {
       alert('Could not add author')
     }
   }
-
   return (
     <Body>
       <br />

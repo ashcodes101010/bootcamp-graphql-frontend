@@ -42,7 +42,7 @@ const Home = () => {
       <Title>Authors' Avenue</Title>
       <InfoBox>Welcome to Authors' Avenue! 
         <p>Look for other authors and select their name to view their information.</p>
-        <p>Can't find an author? Add them to the site!</p>
+        <p>Can't find an author? Log in and add them!</p>
       </InfoBox>
       <StyledButton type="button" onClick={addAuthor}>Add me (Ash)!</StyledButton>
       <Authors />

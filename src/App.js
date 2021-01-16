@@ -7,7 +7,9 @@ import client from './client'
 import Home from './containers/Home'
 import AuthorPage from './containers/AuthorPage'
 import AddAuthor from './containers/AddAuthor'
-import Nav from './components/Nav'
+import Login from './containers/Login'
+import Nav from './containers/Nav'
+import Register from './containers/Register'
 
 const App = () => (
   <Router>
@@ -18,6 +20,8 @@ const App = () => (
           <Switch>
             <Route path="/author/:id" component={AuthorPage} />
             <Route path="/AddAuthor" component={AddAuthor} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
             <Route path="/" component={Home} />
           </Switch>
         </div>

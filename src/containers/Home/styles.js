@@ -11,6 +11,7 @@ export const InfoBox = styled.div`
     border: outset #e6dac1 2px;
     font-size: 25px;
     color: #3b301b;
+
     @media (max-width: 600px) {
         width: 80vw;
     }
